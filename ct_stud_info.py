@@ -1,4 +1,8 @@
-
+# This module has been implemented in the file ct_stud_info_2.py
+''' README 
+Work in Progress
+'''
+# class Stud_info stores students info and grades
 class Stud_info:
     def __init__(self,id,name,gen,dob,city):
         self.dict = {
@@ -13,6 +17,7 @@ class Stud_info:
         self.dict['grades'] = stud_grades.grades
         return self.dict
 
+# class Stud_grades stores the students grades in various subjects, here for reference I have taken three random subjects 
 class Stud_grades:
     def __init__(self,**grades):
         self.grades = {
@@ -22,15 +27,18 @@ class Stud_grades:
             'Total': grades['Total']
         }
 
+#class Stud_lst stores list of all students
 class Stud_lst:
     def __init__(self):
         self.lst = []
     
+    #Method to add students
     def add_stud(self, *students):
         for student in students:
             self.lst.append(student.dict)
         return self.lst
     
+    #Method to find the list of unique cities in the dataset  
     def unique_cities(self):
         city_lst = []
         for ele in self.lst:
@@ -40,6 +48,7 @@ class Stud_lst:
                 city_lst.append(ele['city'])
         return sorted(city_lst)
 
+    #Method to find student with maximum mark in all the cities
     def max_mark_cities(self):
         city_max_mark_dict = {}
         for ele in self.lst:
@@ -50,6 +59,7 @@ class Stud_lst:
                 city_max_mark_dict[ele['city']] = [ele['id'],ele['name'],int(ele['grades']['Total'])]
         return city_max_mark_dict
 
+    #Method to find student with maximum marks in a given city/cities
     def max_mark_city(self, *cities):
         all_cities_max_mark = self.max_mark_cities()
         max_mark_city_dict = {}
@@ -59,6 +69,7 @@ class Stud_lst:
             max_mark_city_dict[city] = all_cities_max_mark[city]
         return max_mark_city_dict
                 
+    #Method to find maximum mark in dataset with an optional argument to find the maximum marks by gender
     def max_mark(self, gender = None):
         max_mark = 0
         max_name = ''
@@ -85,7 +96,7 @@ class Stud_lst:
             'name': max_name,
             'Total': max_mark
             }
-
+    #Method to find Maximum marks in given subject
     def max_mark_subj(self,subj):
         max_subj = 0
         max_subj_tm = []
@@ -111,6 +122,7 @@ class Stud_lst:
             'Total marks': max_subj_tm,   
         }
 
+    #Method to find average marks with optional argument to get average marks based on subject
     def avg_marks(self,subj = None):
         total_marks = 0
         if subj == None:
@@ -122,6 +134,7 @@ class Stud_lst:
                 total_marks+= int(ele['grades'][subj])
             return round(total_marks/len(self.lst))
     
+    #Method to find number of students from every city in the dataset
     def no_of_stud_cities(self):
         no_dict = {}
         cities_lst = self.unique_cities()
