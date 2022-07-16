@@ -1,5 +1,7 @@
-def encrypter(message,offset):
+# caesars cypher encoder
+def encrypter(message: str,offset: int):
     lst = [chr(i) for i in range(97,123)]
+    message = message.lower()
     enmsg = ""
     lst2 = message.split()
     for ele in lst2:
@@ -11,3 +13,5 @@ def encrypter(message,offset):
                 enmsg+=ele[i]
         print(enmsg, end = " ")
         enmsg = ""
+
+encrypter("Hello World!", 5)

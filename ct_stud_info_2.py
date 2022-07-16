@@ -27,6 +27,10 @@ if __name__ == '__main__':
         id_stud.append(ele['id'])
         total_marks_stud.append(int(ele['grades']['Total']))
 
+    # print(above_avg)
+    # print("\n")
+    # print(below_avg)
+
     # plt.figure(1)
     # plt.axhline(y = avg_marks)
     # plt.scatter(id_stud,total_marks_stud, c = "green")
@@ -37,12 +41,6 @@ if __name__ == '__main__':
     # plt.axhline(y = avg_marks)
     # plt.bar(id_stud,total_marks_stud)
     # plt.show()
-
-    # print(above_avg)
-    # print("\n")
-    # print(below_avg)
-
-
 
     # print(stud_lst.max_mark())
     # print(stud_lst.max_mark('F'))
@@ -58,4 +56,4 @@ if __name__ == '__main__':
     # print(stud_lst.avg_marks('Mathematics'))
     # print(stud_lst.avg_marks('Physics'))
     # print(stud_lst.avg_marks('Chemistry'))
-    print(stud_lst.no_of_stud_cities())
+    #print(stud_lst.no_of_stud_cities())

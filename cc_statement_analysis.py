@@ -1,3 +1,4 @@
+#Credit Card Statement Analysis with csv module and matplotlib
 import csv
 import matplotlib.pyplot as plt
 new_dict = {}

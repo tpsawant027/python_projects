@@ -1,4 +1,3 @@
-import csv
 
 class Stud_info:
     def __init__(self,id,name,gen,dob,city):
