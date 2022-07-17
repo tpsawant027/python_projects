@@ -1,6 +1,7 @@
 # Program to find vaccine appointments by Pincode
 import requests
 import csv
+import pandas as pd
 pincode_list = []
 with open('pincode.csv') as pincode:
     pincode_dict = csv.DictReader(pincode)
@@ -22,9 +23,13 @@ for ele in response_list:
     ele_dict = {
         'center name': ele['name'],
         'address': ele['address'],
-        'slots': ele['slots'],
         'fee_type': ele['fee_type']
     }
     filtered_response_lst.append(ele_dict)
 
-print(filtered_response_lst)
+# print(filtered_response_lst)
+
+#constructing pandas dataframe
+data_frame = pd.DataFrame(filtered_response_lst)
+print(data_frame.to_markdown())
+print(data_frame.to_string())
