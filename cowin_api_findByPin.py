@@ -33,3 +33,5 @@ for ele in response_list:
 data_frame = pd.DataFrame(filtered_response_lst)
 print(data_frame.to_markdown())
 print(data_frame.to_string())
+#exporting to csv
+data_frame.to_csv('file.csv',index=False)
