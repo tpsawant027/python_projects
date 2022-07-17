@@ -23,7 +23,7 @@ for ele in response_list:
         'center name': ele['name'],
         'address': ele['address'],
         'slots': ele['slots'],
-        'fee': ele['fee_type']
+        'fee_type': ele['fee_type']
     }
     filtered_response_lst.append(ele_dict)
 
