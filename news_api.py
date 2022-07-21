@@ -25,7 +25,7 @@ def top_headlines(country: str, api_Key: str):
     
     return lst
 
-# the following searches for news articles for a specified topic 
+# the following function searches for news articles for a specified topic 
 def news(api_key: str, topic: str, domain: str = None, from_date: str = None, to_date: str = None,
          language: str = "en",
          sortby: str = "publishedAt"):
