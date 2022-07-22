@@ -16,6 +16,9 @@ def decoder(message: str, offset: int):
                 dmsg+=ele[i]
         print(dmsg, end = " ")
         dmsg = ""
-msg = "czggj rjmgy!"
-num = 5
-decoder(msg,num)
+
+
+if __name__ == '__main__':
+    msg = "czggj rjmgy!"
+    num = 5
+    decoder(msg,num)

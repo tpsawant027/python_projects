@@ -14,4 +14,6 @@ def encrypter(message: str,offset: int):
         print(enmsg, end = " ")
         enmsg = ""
 
-encrypter("Hello World!", 5)
+
+if __name__ == '__main__':
+    encrypter("Hello World!", 5)
