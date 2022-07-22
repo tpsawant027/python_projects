@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
     stud_lst = ctsi.Stud_lst()
 
-    with open('data.csv') as data:
+    with open('./files/data.csv') as data:
         data_dict = csv.DictReader(data)
         for row in data_dict:
             stud = ctsi.Stud_info(row['id'],row['Name'],row['Gender'],row['dob'],row['City'])

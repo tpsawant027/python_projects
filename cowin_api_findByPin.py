@@ -24,7 +24,7 @@ def find_by_pin(pincode,date_):
 
 if __name__ == '__main__':
     pincode_list = []
-    with open('pincode.csv') as pincode:
+    with open('./files/pincode.csv') as pincode:
         pincode_dict = csv.DictReader(pincode)
         for row in pincode_dict:
             pincode_list.append(row['Pincode'])
